@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Charts</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="whole">
+      <div class="aleks">
+        <canvas id="leksy"></canvas>
+      </div>
+      <div class="second">
+        <canvas id="second"></canvas>
+      </div>
+      <div class="third">
+        <canvas id="third"></canvas>
+      </div>
+      <div class="forth">
+        <canvas id="forth"></canvas>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script>
+      //   var img = new Image();
+      //   img.src =
+      //     'http://papers.co/wallpaper/papers.co-hi97-park-shinhye-kpop-artist-film-asian-23-wallpaper.jpg';
+      //   img.onload = function() {
+      var ctx = document.getElementById('leksy').getContext('2d');
+      //   var fillPattern = ctx.createPattern(img, 'repeat');
+      var chart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: ['jan', 'feb', 'march', 'apir', 'may', 'june'],
+          datasets: [
+            {
+              label: 'lekspost',
+              backgroundColor: '#ff6384',
+              borderColor: 'rgb(255, 99, 132)',
+              data: [10, 30, 40, 15, 55, 12]
+            }
+          ]
+        }
+      });
+      //   };
+
+      var secondctx = document.getElementById('second').getContext('2d');
+      var secondChart = new Chart(secondctx, {
+        type: 'bar',
+        data: {
+          labels: ['aleks', 'nichola', 'tesla', 'mark', 'edson', 'edna'],
+          datasets: [
+            {
+              label: 'The men',
+              data: [12, 19, 3, 5, 2, 3],
+              backgroundColor: [
+                'rgba(255, 99, 132)',
+                'rgba(54, 162, 235)',
+                'rgba(255, 206, 86)',
+                'rgba(75, 192, 192)',
+                'rgba(153, 102, 255)',
+                'rgba(255, 159, 64)'
+              ],
+              borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+              ],
+              borderWidth: 1
+            }
+          ]
+        },
+        options: {
+          scales: {
+            yAxes: [
+              {
+                ticks: {
+                  beginAtZero: true
+                }
+              }
+            ]
+          },
+          responsiveAnimationDuration: 0
+        }
+      });
+
+      var thirdctx = document.getElementById('third').getContext('2d');
+      var thirdChart = new Chart(thirdctx, {
+        type: 'pie',
+        data: {
+          labels: ['aleks', 'kim', 'kang', '미아러'],
+          datasets: [
+            {
+              data: [20, 30, 45, 12],
+              backgroundColor: [
+                'rgba(255, 99, 132)',
+                'rgba(54, 162, 235)',
+                'rgba(255, 206, 86)',
+                'rgba(75, 192, 192)',
+                'rgba(153, 102, 255)',
+                'rgba(255, 159, 64)'
+              ]
+            }
+          ]
+        }
+      });
+      var forthctx = document.getElementById('forth').getContext('2d');
+      var forthChart = new Chart(forthctx, {
+        type: 'doughnut',
+        data: {
+          labels: ['aleks', 'kim', 'kang', '미아러'],
+          datasets: [
+            {
+              data: [20, 30, 45, 12],
+              backgroundColor: [
+                'rgba(255, 99, 132)',
+                'rgba(54, 162, 235)',
+                'rgba(255, 206, 86)',
+                'rgba(75, 192, 192)',
+                'rgba(153, 102, 255)',
+                'rgba(255, 159, 64)'
+              ]
+            }
+          ]
+        }
+      });
+    </script>
+  </body>
+</html>
